@@ -6,7 +6,7 @@ exports.up = function(knex) {
     // id: primary key
     table.increments();
     // VIN unique, required
-    table.text('name', 17).unique().notNullable();
+    table.text('VIN', 17).unique().notNullable();
     // Make, required
     table.text('make', 128).notNullable();
     // Model, required
@@ -21,5 +21,5 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.scheme.dropTableIfExists('cars')
+  return knex.schema.dropTableIfExists('cars')
 };
